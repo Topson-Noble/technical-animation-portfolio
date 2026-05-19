@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>3D Projects</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css?v=3" rel="stylesheet">
+
+  <style>
+    .portfolio-card {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.35s ease, border-color 0.35s ease;
+      background: rgba(255, 255, 255, 0.03);
+      cursor: pointer;
+      /* Pin button to bottom */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    .portfolio-card .portfolio-img img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.45s ease;
+    }
+
+    .portfolio-card:hover .portfolio-img img {
+      transform: scale(1.08);
+    }
+
+    /* Push the View button to the bottom of every card */
+    .portfolio-card .btn {
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body class="portfolio-page">
+
+<header id="header" class="header d-flex align-items-center light-background sticky-top">
+  <div class="container position-relative d-flex align-items-center justify-content-between">
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+
+  </div>
+</header>
+
+<main class="main">
+
+<section id="3d-projects" class="section"
+  style="background: url('assets/img/bg_houserender.png') center center/cover no-repeat;
+         background-position: center center;
+         position: relative;
+         overflow: hidden;">
+
+  <!-- dark overlay -->
+  <div style="position:absolute; inset:0; background:rgba(0,0,0,0.75); backdrop-filter: blur(3px); z-index:0;"></div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100" style="position:relative; z-index:1;">
+
+    <div class="container section-title" data-aos="fade-up">
+      <h2>3D Projects</h2>
+      <p>Here are some of my 3D projects showcasing my professional experience as a 3D Artist/Animator.</p>
+    </div>
+
+    <div class="container">
+      <div class="row gy-4 justify-content-center">
+
+        <!-- New Beginning -->
+        <div class="col-lg-5 col-md-6" data-aos="fade-up">
+          <div class="portfolio-card h-100 text-center p-4" onclick="location.href='new-beginning.html';">
+            <div class="portfolio-img mb-3">
+              <img src="assets/img/new_beginning/Void_Render_00.png" class="img-fluid rounded" alt="New Beginning">
+            </div>
+            <h4>New Beginning</h4>
+            <p>An experimental 3D animated musical short which I led and directed.</p>
+            <!-- <a href="/new-beginning.html" class="btn btn-primary mt-2">View</a> -->
+          </div>
+        </div>
+
+        <!-- 3D Animation Demo Reel -->
+        <div class="col-lg-5 col-md-6" data-aos="fade-up">
+          <div class="portfolio-card h-100 text-center p-4" onclick="location.href='3d-animation-demo-reel.html';">
+            <div class="portfolio-img mb-3">
+              <img src="assets/img/portfolio/zzz.png" class="img-fluid rounded" alt="3D Animation Reel">
+            </div>
+            <h4>3D Animation Demo Reel</h4>
+            <p>A compilation of my character animations for films showcasing my experience as a 3D Animator.</p>
+            <!-- <a href="/3d-animation-demo-reel.html" class="btn btn-primary mt-2">View</a> -->
+          </div>
+        </div>
+
+        <!-- Creature Gameplay Animation Reel -->
+        <div class="col-lg-5 col-md-6" data-aos="fade-up">
+          <div class="portfolio-card h-100 text-center p-4" onclick="location.href='creature-gameplay-animation-reel.html';">
+            <div class="portfolio-img mb-3">
+              <img src="assets/img/creature ss.png" class="img-fluid rounded" alt="Creature Gameplay Reel">
+            </div>
+            <h4>Creature Gameplay Animation Reel</h4>
+            <p>A compilation of my creature gameplay animations</p>
+            <!-- <a href="/creature-gameplay-animation-reel.html" class="btn btn-primary mt-2">View</a> --> 
+          </div>
+        </div>
+
+                <!-- Game Animation Reel -->
+        <div class="col-lg-5 col-md-6" data-aos="fade-up">
+          <div class="portfolio-card h-100 text-center p-4" onclick="location.href='game-animation-reel.html';">
+            <div class="portfolio-img mb-3">
+              <img src="assets/img/game_ss.png" class="img-fluid rounded" alt="Creature Gameplay Reel">
+            </div>
+            <h4>Game Animation Reel</h4>
+            <p>A compilation of my game animations</p>
+            <!-- <a href="/game-animation-reel.html" class="btn btn-primary mt-2">View</a> --> 
+          </div>
+        </div>
+
+                        <!-- Technical Animation Reel -->
+        <div class="col-lg-5 col-md-6" data-aos="fade-up">
+          <div class="portfolio-card h-100 text-center p-4" onclick="location.href='technical-animation-reel.html';">
+            <div class="portfolio-img mb-3">
+              <img src="assets/img/Tech anim ss.png" class="img-fluid rounded" alt="Creature Gameplay Reel">
+            </div>
+            <h4>Technical Animation Reel</h4>
+            <p>A compilation of my technical animation works</p>
+            <!-- <a href="/technical-animation-reel.html" class="btn btn-primary mt-2">View</a> --> 
+          </div>
+        </div>
+
+                        <!-- Technical Director Reel -->
+        <div class="col-lg-5 col-md-6" data-aos="fade-up">
+          <div class="portfolio-card h-100 text-center p-4" onclick="location.href='rigging-reel.html';">
+            <div class="portfolio-img mb-3">
+              <img src="assets/img/rigging ss.png" class="img-fluid rounded" alt="Creature Gameplay Reel">
+            </div>
+            <h4>Technical Director/Rigging Reel</h4>
+            <p>A compilation of my TD/rigging works</p>
+            <!-- <a href="/technical-animation-reel.html" class="btn btn-primary mt-2">View</a> --> 
+          </div>
+        </div>
+
+        <!-- Lighting and Rendering-->
+        <div class="col-lg-5 col-md-6" data-aos="fade-up">
+          <div class="portfolio-card h-100 text-center p-4" onclick="location.href='lighting-and-rendering.html';">
+            <div class="portfolio-img mb-3">
+              <img src="assets/img/bgrender3.png" class="img-fluid rounded" alt="Lighting Rendering Works">
+            </div>
+            <h4>Lighting/Rendering Works</h4>
+            <p>A showcase of my 3D lighting and rendering works.</p>
+            <!-- <a href="/lighting-and-rendering.html" class="btn btn-primary mt-2">View</a> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="copyright text-center">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Temitope Falade</strong> <span>All Rights Reserved<br></span></p>
+    </div>
+
+    <div class="social-links d-flex justify-content-center" data-aos="fade-up" data-aos-delay="600">
+      <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
+      <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
