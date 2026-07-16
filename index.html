@@ -15,7 +15,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -200,6 +200,28 @@
       50%       { transform: rotate(45deg) translateY(6px); opacity: 1; }
     }
 
+    /* =====================================================
+       BIO TEXT — justified paragraphs with clear spacing
+       =====================================================
+       Scoped to .bio-text only, so nothing else on the page
+       is affected. Each paragraph inside .bio-text gets
+       justified alignment + a clear gap below it; the last
+       paragraph has no extra gap.
+    */
+    .bio-text p {
+      text-align: justify;
+      margin-bottom: 1rem;
+    }
+
+    .bio-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Breathing room between the bio block and the "View My Works" button below it */
+    .bio-text {
+      margin-bottom: 1.75rem;
+    }
+
   </style>
 </head>
 
@@ -214,17 +236,9 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-
-          <!-- PORTFOLIO -->
-          <li class="has-dropdown">
-            <a href="#">Portfolio</a>
-            <ul class="dropdown-panel">
-              <li><a href="technical-animation.html">Technical Animation</a></li>
-              <li><a href="rigging.html">Rigging</a></li>
-             <!-- <li><a href="tools.html">Tools</a></li> // remove comment to show 'tools'--> 
-            </ul>
-          </li>
-
+          <li><a href="tech-anim-projects.html">Tech Anim</a></li>
+          <li><a href="rigging-projects.html">Rigging</a></li>
+          <li><a href="tools-projects.html">Tools</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -234,18 +248,18 @@
 
   <main class="main">
 
-       <!-- ═══════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════
          ROW 2 — Bio / photo / socials
          Identical to the original hero section.
          ═══════════════════════════════════════════════ -->
     <section id="hero" class="hero section"
-        style="background: url('assets/img/techy\ bg\ 03.png') center center/cover no-repeat !important;
+        style="background: url('assets/img/techybg04.png') center center/cover no-repeat !important;
                min-height: 100vh;
                position: relative;
                overflow: hidden;">
 
       <!-- dark overlay — same as original -->
-      <div style="position:absolute; inset:0; background:rgba(0,0,0,0.3); z-index:0;"></div>
+      <div style="position:absolute; inset:0; background:rgba(0,0,0,0.1); z-index:0;"></div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100" style="position:relative; z-index:1;">
         <div class="row gy-4 align-items-center">
@@ -254,9 +268,29 @@
           <div class="col-lg-6 order-2 order-lg-1">
             <div class="hero-content">
               <h1 data-aos="fade-up" data-aos-delay="200">Hello, I'm <span class="highlight">Temitope Falade</span></h1>
-              <h2 data-aos="fade-up" data-aos-delay="300">Creative <span class="typed" data-typed-items="Technical Animator, Technical Director, Rigger"></span></h2>
-              <p data-aos="fade-up" data-aos-delay="400">Technical Animator specializing in gameplay systems, character animation, and real-time production pipelines. With expertise spanning Unreal Engine, animation blueprints, state machines, rigging, tooling, and workflow optimization, I bridge the gap between art and engineering to deliver responsive, high-quality character experiences. Passionate about solving complex technical challenges, I create scalable animation solutions that empower teams, streamline production, and bring compelling gameplay to life.</p>
+              <h2 data-aos="fade-up" data-aos-delay="300">Creative <span class="typed" data-typed-items="Technical Animator, Rigger, Technical Director"></span></h2>
+              <!-- ══════ BIO — justified, 3 clear paragraphs ══════
+                   Add/edit paragraphs freely inside .bio-text — each
+                   <p> automatically gets justify alignment + spacing
+                   below it (see .bio-text CSS rule up in <style>). -->
+              <div class="bio-text" data-aos="fade-up" data-aos-delay="400">
 
+                <!-- Paragraph 1: Role & experience -->
+                <p>I am a Technical Animator focused on technical animation, rigging, and tooling for games, films, and VFX, with over 5 years of professional experience working with Unreal Engine 5 (Blueprints and C++), Houdini, and Maya.</p>
+
+                <!-- Paragraph 2: Specialization -->
+                <p>I specialize in creating animation systems, control rigs, production-ready rigs, tools, physics-driven systems, procedural animation systems, and animation workflow optimizations with clean, maintanable architecture. I bridge the gap between art and engineering to deliver responsive, high-quality character experiences.</p>
+
+                <!-- Paragraph 3: Work style -->
+                <p>I have shipped work solo and in small cross-discipline teams, and adapt quickly to new tools and workflows. Currently open to exciting opportunities in technical animation and rigging.</p>
+
+              </div>
+              <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+                <a href="tech-anim-projects.html" class="btn btn-primary">Tech Anim</a>
+                <a href="rigging-projects.html" class="btn btn-primary">Rigging</a>
+                <a href="tools-projects.html" class="btn btn-primary">Tools</a>
+            
+              </div>
               <div class="social-links" data-aos="fade-up" data-aos-delay="600">
                 <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
                 <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
@@ -293,122 +327,6 @@
 
         </div>
       </div>
-    </section>
-
-
-    <!-- ═══════════════════════════════════════════════
-         ROW 3 — Skills (original, unchanged)
-         ═══════════════════════════════════════════════ -->
-    <section id="skills" class="skills section">
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills and Tools</h2>
-        <p>My software tools proficiency are highlighted as follows:</p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-4 skills-animation">
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="skill-box">
-              <h3>Technical Animation</h3>
-              <p>- Gameplay Animation Systems</p>
-              <p>- Procedural Animation</p>
-              <p>- Locomotion System</p>
-              <p>- Animation State Machines</p>
-              <p>- Blend Spaces</p>
-              <p>- Aim offset</p>
-              <p>- Turn-in-place</p>
-              <p>- IK feet and arms</p>
-              <p>- Obstacle Avoidance</p>
-              <p>- Animation Montages</p>
-              <p>- Root Motion</p>
-              <p>- Motion Matching</p>
-              <p>- Animation Retargeting</p>
-              <p>- Full-Body IK & Runtime IK Solutions</p>
-              <p>- Animation Optimization & Debugging</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="skill-box">
-              <h3>Unreal Engine 5</h3>
-              <p>- Animation Blueprints</p>
-              <p>- Control Rig</p>
-              <p>- IK Rig & IK Retargeter</p>
-              <p>- Motion Warping</p>
-              <p>- Full Body IK (FBIK)</p>
-              <p>- Blueprint Scripting</p>
-              <p>- Gameplay Framework Integration</p>
-              <p>- Sequencer</p>
-              <p>- Niagara Integration</p>
-              <p>- Performance Profiling & Optimization</p>
-              
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="skill-box">
-              <h3>Rigging & Character Systems</h3>
-              <p>- Character Rigging</p>
-              <p>- Modular Rig Development</p>
-              <p>- Skinning & Weight Painting</p>
-              <p>- Deformation Systems</p>
-              <p>- Constraint Systems</p>
-              <p>- Skeleton Setup & Maintenance</p>
-              <p>- Facial Rigging</p>
-              <p>- Corrective Blendshapes & Pose Drivers</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-            <div class="skill-box">
-              <h3>Tools & Pipeline Development</h3>
-              <p>- Tool Development</p>
-              <p>- Workflow Automation</p>
-              <p>- Asset Validation</p>
-              <p>- Technical Documentation</p>
-              <p>- Cross-Discipline Collaboration</p>
-              <p>- Workflow Optimization</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
-            <div class="skill-box">
-              <h3>Scripting & Programming</h3>
-              <p>- C++</p>
-              <p>- Unreal Blueprints</p>
-              <p>- Python</p>
-              <p>- Maya MEL</p>
-              <p>- Editor Utility Tools</p>
-              <p>- Data Processing Workflows</p>
-              <p>- Automation Scripts</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
-            <div class="skill-box">
-              <h3>Tools</h3>
-              <p>- Unreal Engine 5</p>
-              <p>- Maya</p>
-              <p>- Blender</p>
-              <p>- Houdini</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="700">
-            <div class="skill-box">
-              <h3>Version Control & Production</h3>
-              <p>- Git</p>
-              <p>- Perforce</p>
-              <p>- Jira</p>
-              <p>- Miro</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
     </section>
 
   </main>

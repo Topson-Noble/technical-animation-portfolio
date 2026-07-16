@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>The Songs Of Ayan - Game Project</title>
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════════════════════
+       PROJECT PAGE TEMPLATE — consistent structure for all games
+       Sections: Back(top) → Title → Quick Facts → Video →
+       Actions (Download/GitHub) → Overview → Tools Used →
+       Game Features (repeatable) → Gallery → Back(bottom)
+       ══════════════════════════════════════════════════════════ */
+
+    /* ── Back button (top) ── */
+    .back-btn-top {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .back-btn {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Quick Facts strip ── */
+    .quick-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1rem;
+      justify-content: center;
+      margin: 1.25rem 0 2rem;
+    }
+
+    .quick-facts .fact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.8rem;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .quick-facts .fact-pill strong {
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+    }
+
+    /* ── Video ── */
+    .project-video iframe {
+      width: 100%;
+      height: 500px;
+      border-radius: 10px;
+    }
+
+    /* ── Action buttons row (Download + GitHub) ── */
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: flex-start;
+      margin-bottom: 3rem;
+    }
+
+    .project-actions .btn {
+      min-width: 220px;
+    }
+
+    /* ── Section headings ── */
+    .project-section-block {
+      margin-bottom: 3rem;
+    }
+
+    .project-section-block > h3 {
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    /* ── Overview / Tools / Technical Details card ──
+       The section header now lives INSIDE the card as a title bar.
+       Only .info-card-body scrolls (not the whole card), so the
+       header stays visible the whole time, even while the text
+       below it is being scrolled. */
+    .info-card {
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      overflow: hidden; /* clips the title bar's corners to match the card's rounded corners */
+
+      max-width: 1400px;      /* Control the card's width here*/
+      margin: 0 auto;
+    }
+
+    .info-card-title {
+      margin: 0;
+      padding: 1rem 1.5rem 0.85rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .info-card-body {
+      padding: 1.25rem 1.5rem;
+
+      max-height: 160px;       /* ← ADJUST THIS to control the scrollable body's height */
+      overflow-y: auto;        /* shows a scrollbar only when content overflows */
+      overflow-x: hidden;
+    }
+
+    .info-card p {
+      color: #ffffff;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    .info-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Tools Used tags ──
+       justify-content: center keeps tags centered as a group.
+       flex-wrap already sends overflow tags to a new line automatically
+       once the row runs out of horizontal space in .info-card. */
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .tools-list .tool-tag {
+      padding: 0.4rem 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.85rem;
+      color: #ffffff;
+    }
+
+    /* ── Game Features (repeatable block) ── */
+    .feature-block {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.75rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .feature-block h4 {
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 1.15rem;
+      margin: 0 0 1rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* faded line below the title */
+    }
+
+    /* ── Feature description — scrollable, justified, same behavior
+       as the Project Overview card. Only this block scrolls; the
+       title above and the media below it stay fully visible. ── */
+    .feature-description {
+      max-height: 160px;       /* ← ADJUST THIS to control the scrollable area's height */
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 0.75rem;  /* ← keeps text clear of the scrollbar */
+      padding-left: 0.1rem;    /* small matching space on the left for visual balance */
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* demarcation line before the media below */
+    }
+
+    .feature-description p {
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    .feature-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Sub-group label inside a feature card (GIFs / Screenshots) */
+    .feature-media-group {
+      margin-top: 1.5rem;
+    }
+
+    /* ── PICKY-TOUCH OVERRIDE ──
+       Makes the "GIFS" / "SCREENSHOTS" sub-labels match the feature
+       title (h4) font/style exactly. Delete this whole rule (and the
+       .feature-media-group h5 rule above it becomes unused) to revert
+       these labels back to a smaller, muted, uppercase look instead. */
+    .feature-media-group h5 {
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── Gallery / Screenshot Grid ── */
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 767px) {
+      .screenshot-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .screenshot-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Game Features media grid — same sizing as the Gallery grid above,
+       but centers items instead of stretching them across 3 fixed columns.
+       1 item = centered single item. 2 items = centered pair. 3+ items =
+       wraps and fills rows just like the Gallery grid. ── */
+    .feature-media-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+
+    .feature-media-grid .screenshot-item {
+      flex: 0 0 calc((100% - 2.5rem) / 3);
+      max-width: calc((100% - 2.5rem) / 3);
+    }
+
+    @media (max-width: 767px) {
+      .feature-media-grid .screenshot-item {
+        flex-basis: calc((100% - 1.25rem) / 2);
+        max-width: calc((100% - 1.25rem) / 2);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .feature-media-grid .screenshot-item {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+    }
+
+    .screenshot-item {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1.5px solid #c8c8d0;
+      cursor: pointer;
+    }
+
+    .screenshot-item img,
+    .screenshot-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .screenshot-item:hover img,
+    .screenshot-item:hover video {
+      transform: scale(1.06);
+    }
+
+    /* ── Lightbox Overlay ── */
+    #lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #lightbox-overlay.active {
+      display: flex;
+    }
+
+    .lightbox-frame {
+      position: relative;
+      max-width: 72vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.55);
+      background: #000;
+    }
+
+    .lightbox-frame img {
+      display: block;
+      max-width: 72vw;
+      max-height: 80vh;
+      width: auto;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 10;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(0,0,0,0.9);
+    }
+
+    /* ── Zigzag Flow layout for Concept Evolution feature ── */
+    .flow-zigzag {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 0;
+      padding: 0 2rem;
+    }
+
+    .flow-row {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .flow-row-reverse {
+      flex-direction: row-reverse;
+    }
+
+    .flow-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 0 0 calc((100% - 6rem) / 3);
+      max-width: calc((100% - 6rem) / 3);
+      min-width: 0;
+    }
+
+    .flow-item .screenshot-item {
+      width: 100%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .flow-label {
+      width: 100%;
+      background: #000000;
+      color: #ffffff;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-align: center;
+      padding: 0.5rem 0.4rem;
+      border: 1.5px solid #c8c8d0;
+      border-top: none;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      margin-top: -1px;
+      line-height: 1.4;
+    }
+
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      flex-shrink: 0;
+      padding-top: 2.8rem;
+      width: 2rem;
+    }
+
+    .flow-arrow svg {
+      width: 2rem;
+      height: 2rem;
+      filter: drop-shadow(0 0 4px rgba(255,255,255,0.3));
+    }
+
+    /* Connector row between the two flow rows */
+    .flow-connector-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      padding: 0.25rem 0;
+    }
+
+    .flow-connector-spacer {
+      flex: 0 0 calc((100% - 6rem) / 3);
+      max-width: calc((100% - 6rem) / 3);
+    }
+
+    .flow-connector-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      flex-shrink: 0;
+      width: 2rem;
+    }
+
+    .flow-connector-arrow svg {
+      width: 2rem;
+      height: 2rem;
+      filter: drop-shadow(0 0 4px rgba(255,255,255,0.3));
+    }
+
+    @media (max-width: 767px) {
+      .flow-zigzag {
+        padding: 0 0.5rem;
+      }
+      .flow-row {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      .flow-item {
+        flex: 0 0 calc((100% - 1.5rem) / 2);
+        max-width: calc((100% - 1.5rem) / 2);
+      }
+      .flow-arrow {
+        display: none;
+      }
+      .flow-connector-row {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .flow-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body class="portfolio-page">
+
+  <!-- ═══════════════════════════════════════════════
+       NAVBAR — dropdown themed
+       ═══════════════════════════════════════════════ -->
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="tech-anim-projects.html">Tech Anim</a></li>
+          <li><a href="rigging-projects.html">Rigging</a></li>
+          <li><a href="tools-projects.html">Tools</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section id="project-details" class="portfolio section">
+      <div class="container" data-aos="fade-up">
+
+        <!-- ══════ BACK BUTTON (TOP) ══════ -->
+        <div class="back-btn-top" data-aos="fade-up">
+          <a href="tech-anim-projects.html" class="btn btn-primary">
+            <i class="bi bi-arrow-left"></i> Back to Tech Anim Projects
+          </a>
+        </div>
+
+        <!-- ══════ TITLE + SHORT DESCRIPTION ══════ -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Locomotion Systems</span></h2>
+        </div>
+
+        <!-- ══════ QUICK FACTS STRIP ══════ -->
+        <!-- Edit/add pills as needed per project: Engine, Platform, Role, Team, Duration, Status -->
+        <div class="quick-facts" data-aos="fade-up">
+          <span class="fact-pill"><strong>Engine Implementation:</strong> Unreal Engine 5</span>
+          <span class="fact-pill"><strong>Animation:</strong>Maya</span>
+          <span class="fact-pill"><strong>Focus:</strong> Technical Animation</span>
+        </div>
+
+        <!-- ══════ GAMEPLAY VIDEO ══════ -->
+        <div class="ratio ratio-16x9 mb-4">
+          <iframe
+            src="https://player.vimeo.com/video/1209505461"
+            title="The Aurora Snow Slingers Gameplay"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- ══════ TECHNICAL DETAILS ══════ -->
+        <div class="project-section-block" data-aos="fade-up">
+          <div class="info-card">
+            <h3 class="info-card-title">Technical Details</h3>
+            <div class="info-card-body">
+              <div class="tools-list">
+                <span class="tool-tag">8-Directional Movement</span>
+                <span class="tool-tag">Flight System</span>
+                <span class="tool-tag">IK Foot Placement</span>
+                <span class="tool-tag">Full Body IK</span>
+                <span class="tool-tag">Turn-In-Place</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════ FEATURES (repeatable block) ══════ -->
+        <div class="project-section-block" data-aos="fade-up">
+         <!-- <h3>Features</h3>-->
+
+          <!-- ─────────────────────────────────────────────────────────
+               FEATURE CARD 1
+               Structure: Title → Description → GIFs (optional) → Screenshots (optional)
+               Duplicate this entire .feature-block to add Feature 02, 03, etc.
+               ───────────────────────────────────────────────────────── -->
+          <div class="feature-block">
+            <h4><span style="color:#136ac1;">8-Directional Movement:</span> State Machine and Blendspaces </h4>
+
+            <!-- Description — scrollable, justified, split into paragraphs just like Project Overview -->
+            <div class="feature-description">
+              <p>Implemented a responsive 8-directional locomotion system that enables seamless character movement across all movement directions.</p>
+              <p>The system utilizes Blend Spaces and Animation Blueprints (state machines) to produce smooth transitions between idle, walking, jogging, and directional strafing while maintaining responsive player control.</p>
+              <p>Special attention was given to animation blending quality and movement fidelity for smooth gameplay.</p>
+            </div>
+
+            <!-- GIFs (optional) — replace src with your real gif(s) or mp4 clip(s), add/remove .screenshot-item entries, or delete this whole block if none.
+                 MP4s are far more optimized than GIFs for the same "looping clip" effect — use a <video> tag like below instead of <img> for mp4s. -->
+            <div class="feature-media-group">
+              <!--<h5>GIFs</h5>-->
+              <div class="screenshot-grid feature-media-grid">
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <video autoplay loop muted playsinline>
+                    <source src="tech-anim-projects/8d_walk_GIF.mp4" type="video/mp4">
+                  </video>
+                </div>
+
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <video autoplay loop muted playsinline>
+                    <source src="tech-anim-projects/8d_run_GIF.mp4" type="video/mp4">
+                  </video>
+                </div>              
+
+              </div>
+            </div>
+            
+            <div class="feature-media-group">
+             <!--  <h5>Screenshots</h5>-->
+              <div class="screenshot-grid feature-media-grid">
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <img src="tech-anim-projects/ss-01.png" alt="Screenshot">
+                </div>
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <img src="tech-anim-projects/ss-02.png" alt="Screenshot">
+                </div>
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <img src="tech-anim-projects/ss-03.png" alt="Screenshot">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <!-- ─────────────────────────────────────────────────────────
+               FEATURE CARD 2 — placeholder, replace title/description/media
+               ───────────────────────────────────────────────────────── -->
+          <div class="feature-block">
+            <h4><span style="color:#136ac1;">Flight System </span>Movement</h4>
+
+            <div class="feature-description">
+              <p>Developed a character flight animation system supporting smooth transitions between grounded locomotion and aerial movement.</p>
+              <p>The system handles takeoff, flight, hovering, directional movement, and landing while maintaining natural animation flow through state machines and transition rules.</p>
+              <p>The implementation was designed to be modular, making it easy to integrate into different gameplay scenarios.</p>
+            </div>
+
+            <div class="feature-media-group">
+            <!--  <h5>GIFs</h5> -->
+              <div class="flow-zigzag">
+                <!-- Row 1: Card 1 → Card 2 → Card 3 -->
+                <div class="flow-row">
+                  <div class="flow-item">
+                    <div class="screenshot-item" onclick="openLightbox(this)">
+                      <video autoplay loop muted playsinline>
+                        <source src="tech-anim-projects/flight_take_off.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="flow-label">Flight Takeoff/Landing</div>
+                  </div>
+                  <div class="flow-item">
+                    <div class="screenshot-item" onclick="openLightbox(this)">
+                      <video autoplay loop muted playsinline>
+                        <source src="tech-anim-projects/flight_directional.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="flow-label">Flight Directional Movement</div>
+                  </div>
+
+                  <div class="flow-item">
+                    <div class="screenshot-item" onclick="openLightbox(this)">
+                      <video autoplay loop muted playsinline>
+                        <source src="tech-anim-projects/flight_dive_GIF.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="flow-label">Dive</div>
+                  </div>
+                </div>
+                <!-- Connector: down arrow from Card 3 to Card 4 row -->
+                <div class="flow-connector-row">
+                  <div class="flow-connector-spacer"></div>
+                  <div class="flow-connector-spacer"></div>
+                  
+                </div>
+                <!-- Row 2: Card 6 ← Card 5 ← Card 4 -->
+              </div>
+            </div>
+
+            <div class="feature-media-group">
+             <!--  <h5>Screenshots</h5>-->
+              <div class="screenshot-grid feature-media-grid">
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <img src="tech-anim-projects/ss-05.png" alt="Screenshot">
+                </div>
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <img src="tech-anim-projects/ss-04.png" alt="Screenshot">
+                </div>
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <img src="tech-anim-projects/ss-06.png" alt="Screenshot">
+                </div>
+              </div>
+            </div>
+          </div>
+           <!-- <div class="feature-media-group">
+              <h5>Screenshots</h5>
+              <div class="screenshot-grid feature-media-grid">
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <img src="https://placehold.co/600x338/1a1a1a/ffffff?text=Screenshot+1" alt="Feature 03 Screenshot 1">
+                </div>
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <img src="https://placehold.co/600x338/1a1a1a/ffffff?text=Screenshot+2" alt="Feature 03 Screenshot 2">
+                </div>
+              </div>
+            </div>
+          </div>-->
+
+<!-- ─────────────────────────────────────────────────────────
+               FEATURE CARD 3 — placeholder, replace title/description/media
+               ───────────────────────────────────────────────────────── -->
+          <div class="feature-block">
+            <h4><span style="color:#136ac1;">IK Foot Placement: </span>Terrain Adaptation</h4>
+
+            <div class="feature-description">
+              <p>Implemented a procedural inverse kinematics (IK) foot placement system that dynamically adjusts foot positioning based on terrain height and surface orientation.</p>
+              <p>Using line traces and runtime calculations, the system improves character stability on uneven environments by reducing foot sliding and preventing visual clipping.</p>
+              <p>This creates more believable character interactions with the environment while preserving animation quality.</p>
+            </div>
+
+           <!-- GIFs (optional) — replace src with your real gif(s) or mp4 clip(s), add/remove .screenshot-item entries, or delete this whole block if none.
+                 MP4s are far more optimized than GIFs for the same "looping clip" effect — use a <video> tag like below instead of <img> for mp4s. -->
+            <div class="feature-media-group">
+              <!--<h5>GIFs</h5>-->
+              <div class="screenshot-grid feature-media-grid">
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <video autoplay loop muted playsinline>
+                    <source src="tech-anim-projects/ik-foot-terrain-adapt.mp4" type="video/mp4">
+                  </video>
+                </div>
+
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <img src="tech-anim-projects/ss-07.png" alt="Screenshot">
+                </div>         
+                
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <img src="tech-anim-projects/ss-08.png" alt="Screenshot">
+                </div>  
+
+              </div>
+            </div>
+          </div>
+
+          <!-- ─────────────────────────────────────────────────────────
+               FEATURE CARD 4 — placeholder, replace title/description/media
+               ───────────────────────────────────────────────────────── -->
+          <div class="feature-block">
+            <h4><span style="color:#136ac1;">Turn-In-Place</span></h4>
+
+            <div class="feature-description">
+              <p>Created a curve-driven Turn-In-Place animation system that allows stationary characters to rotate naturally without requiring movement input.</p>
+              <p>The implementation detects changes in the character's facing direction and plays context-appropriate turning animations while maintaining smooth transitions back into locomotion.</p>
+              <p>This significantly improves character responsiveness and realism, particularly in third-person gameplay where precise orientation is important.</p>
+            </div>
+
+           <!-- GIFs (optional) — replace src with your real gif(s) or mp4 clip(s), add/remove .screenshot-item entries, or delete this whole block if none.
+                 MP4s are far more optimized than GIFs for the same "looping clip" effect — use a <video> tag like below instead of <img> for mp4s. -->
+            <div class="feature-media-group">
+              <!--<h5>GIFs</h5>-->
+              <div class="screenshot-grid feature-media-grid">
+                <div class="screenshot-item" onclick="openLightbox(this)">
+                  <video autoplay loop muted playsinline>
+                    <source src="tech-anim-projects/turn-in-place.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+
+      <!-- ══════ BACK BUTTON (BOTTOM) ══════ -->
+        <div class="back-btn-top" data-aos="fade-up">
+          <a href="tech-anim-projects.html" class="btn btn-primary">
+            <i class="bi bi-arrow-left"></i> Back to Tech Anim Projects
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Lightbox Overlay ── -->
+  <div id="lightbox-overlay" onclick="handleOverlayClick(event)">
+    <div class="lightbox-frame" id="lightbox-frame">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">&times;</button>
+      <img id="lightbox-img" src="" alt="">
+      <video id="lightbox-video" controls loop style="display:none; max-width:72vw; max-height:80vh; border-radius:12px;"></video>
+    </div>
+  </div>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Temitope Falade</strong> <span>All Rights Reserved<br></span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center" data-aos="fade-up" data-aos-delay="600">
+        <a href="https://www.linkedin.com/in/temitope-falade-578107120/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/topson_noble/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://vimeo.com/topson" target="_blank"><i class="bi bi-vimeo"></i></a>
+        <a href="https://www.facebook.com/iam.topson/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://x.com/Topson_noble" target="_blank"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+
+  <script>
+    function openLightbox(cardEl) {
+      const imgEl = cardEl.querySelector('img');
+      const videoEl = cardEl.querySelector('video');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxVideo = document.getElementById('lightbox-video');
+
+      if (videoEl) {
+        const src = videoEl.querySelector('source').src;
+        lightboxVideo.innerHTML = `<source src="${src}" type="video/mp4">`;
+        lightboxVideo.style.display = 'block';
+        lightboxImg.style.display = 'none';
+        lightboxVideo.load();
+        lightboxVideo.play();
+      } else {
+        lightboxImg.src = imgEl.src;
+        lightboxImg.alt = imgEl.alt;
+        lightboxImg.style.display = 'block';
+        lightboxVideo.style.display = 'none';
+      }
+
+      document.getElementById('lightbox-overlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightboxVideo = document.getElementById('lightbox-video');
+      document.getElementById('lightbox-overlay').classList.remove('active');
+      document.getElementById('lightbox-img').src = '';
+      lightboxVideo.pause();
+      lightboxVideo.innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('lightbox-overlay')) {
+        closeLightbox();
+      }
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
