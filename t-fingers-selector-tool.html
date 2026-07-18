@@ -510,7 +510,7 @@
 
         <!-- ══════ BACK BUTTON (TOP) ══════ -->
         <div class="back-btn-top" data-aos="fade-up">
-          <a href="tech-anim-projects.html" class="btn btn-primary">
+          <a href="tools-projects.html" class="btn btn-primary">
             <i class="bi bi-arrow-left"></i> Back
           </a>
         </div>
@@ -518,7 +518,7 @@
         <!-- ══════ TITLE + SHORT DESCRIPTION ══════ -->
         <div class="container section-title" data-aos="fade-up">
           <h2>Fingers Selector Tool</span></h2>
-           <p>A tool for quickly selecting fingers controls for keyframe animation.</p>
+           <p>A Maya tool for quickly selecting fingers controls for keyframe animation.</p>
         </div>
 
         <!-- ══════ QUICK FACTS STRIP ══════ -->
@@ -540,24 +540,11 @@
 
         <!-- ══════ ACTION BUTTONS: DOWNLOAD + GITHUB ══════ -->
         <div class="project-actions" data-aos="fade-up" data-aos-delay="150">
-          <a href="https://topzone.itch.io/the-songs-of-ayan" target="_blank" class="btn btn-primary">
-            <i class="bi bi-download"></i> Download Tool
+          <!-- GitHub button — same style as Download. On by default; replace the href with
+               the project's real repo link, or delete this whole <a> if the project has no public repo. -->
+          <a href="https://github.com/Topson-Noble/fingers-selector-for-maya" target="_blank" class="btn btn-primary">
+            <i class="bi bi-github"></i> Download Tool
           </a>
-        </div>
-
-        <!-- ══════ TECHNICAL DETAILS ══════ -->
-        <div class="project-section-block" data-aos="fade-up">
-          <div class="info-card">
-            <h3 class="info-card-title">Technical Details</h3>
-            <div class="info-card-body">
-              <div class="tools-list">
-                <span class="tool-tag">8-Directional Movement</span>
-                <span class="tool-tag">Flight System</span>
-                <span class="tool-tag">IK Foot Placement</span>
-                <span class="tool-tag">Turn-In-Place</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- ══════ FEATURES (repeatable block) ══════ -->
@@ -570,165 +557,66 @@
                Duplicate this entire .feature-block to add Feature 02, 03, etc.
                ───────────────────────────────────────────────────────── -->
           <div class="feature-block">
-            <h4><span style="color:#136ac1;">8-Directional Movement:</span> State Machine and Blendspaces </h4>
+            <h4><span style="color:#136ac1;">Quick Finger Selection: </span>Select Multiple Controls in One Click</h4>
 
             <!-- Description — scrollable, justified, split into paragraphs just like Project Overview -->
             <div class="feature-description">
-              <p>Developed a responsive 8-directional locomotion system that allows the character to move naturally in every direction.</p>
-              <p>The system uses Blend Spaces and Animation Blueprints to create smooth transitions between idle, walking, running, and strafing while keeping player input responsive.</p>
-              <p>I focused on making the movement feel fluid and reliable so it could serve as a solid foundation for third-person gameplay.</p>
+              <p>Built a custom Maya tool that allows animators to quickly select predefined finger control groups from a simple interface.</p>
+              <p>Instead of manually selecting each control in the viewport, the tool streamlines the process into a single click, helping reduce repetitive actions during keyframe animation.</p>
             </div>
 
             <!-- GIFs (optional) — replace src with your real gif(s) or mp4 clip(s), add/remove .screenshot-item entries, or delete this whole block if none.
                  MP4s are far more optimized than GIFs for the same "looping clip" effect — use a <video> tag like below instead of <img> for mp4s. -->
-            <div class="feature-media-group">
-              <!--<h5>GIFs</h5>-->
-              <div class="screenshot-grid feature-media-grid">
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <video autoplay loop muted playsinline>
-                    <source src="tech-anim-projects/8d-walk-GIF.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <video autoplay loop muted playsinline>
-                    <source src="tech-anim-projects/8d-run-GIF.mp4" type="video/mp4">
-                  </video>
-                </div>              
-
-              </div>
-            </div>
-            
-            <div class="feature-media-group">
+                        <div class="feature-media-group">
              <!--  <h5>Screenshots</h5>-->
               <div class="screenshot-grid feature-media-grid">
                 <div class="screenshot-item" onclick="openLightbox(this)">
-                  <img src="tech-anim-projects/ss-01.png" alt="Screenshot">
-                </div>
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <img src="tech-anim-projects/ss-02.png" alt="Screenshot">
-                </div>
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <img src="tech-anim-projects/ss-03.png" alt="Screenshot">
+                  <img src="tools-projects/tool-01.png" alt="Screenshot">
                 </div>
               </div>
             </div>
           </div>
+          </div>
+            
+
 
           
           <!-- ─────────────────────────────────────────────────────────
                FEATURE CARD 2 — placeholder, replace title/description/media
                ───────────────────────────────────────────────────────── -->
           <div class="feature-block">
-            <h4><span style="color:#136ac1;">Flight System </span></h4>
+            <h4><span style="color:#136ac1;">Flexible Selection Options: </span>Individual or Combined Finger Controls</h4>
 
             <div class="feature-description">
-              <p>Built a complete flight animation system that handles the character's transition from grounded movement into the air and back again.</p>
-              <p>The system includes takeoff, hovering, directional flight, and landing, all connected through Animation Blueprints and state machines.</p>
-              <p>My goal was to make each transition feel seamless while keeping the setup flexible enough to be expanded with additional flight mechanics in the future.</p>
-            </div>
-
-            <div class="feature-media-group">
-            <!--  <h5>GIFs</h5> -->
-              <div class="flow-zigzag">
-                <!-- Row 1: Card 1 → Card 2 → Card 3 -->
-                <div class="flow-row">
-                  <div class="flow-item">
-                    <div class="screenshot-item" onclick="openLightbox(this)">
-                      <video autoplay loop muted playsinline>
-                        <source src="tech-anim-projects/flight-takeoff-GIF.mp4" type="video/mp4">
-                      </video>
-                    </div>
-                    <div class="flow-label">Flight Takeoff/Landing</div>
-                  </div>
-                  <div class="flow-item">
-                    <div class="screenshot-item" onclick="openLightbox(this)">
-                      <video autoplay loop muted playsinline>
-                        <source src="tech-anim-projects/flight-directional-GIF.mp4" type="video/mp4">
-                      </video>
-                    </div>
-                    <div class="flow-label">Flight Directional Movement</div>
-                  </div>
-
-                  <div class="flow-item">
-                    <div class="screenshot-item" onclick="openLightbox(this)">
-                      <video autoplay loop muted playsinline>
-                        <source src="tech-anim-projects/flight-dive-GIF.mp4" type="video/mp4">
-                      </video>
-                    </div>
-                    <div class="flow-label">Dive</div>
-                  </div>
-                </div>
-                <!-- Connector: down arrow from Card 3 to Card 4 row -->
-                <div class="flow-connector-row">
-                  <div class="flow-connector-spacer"></div>
-                  <div class="flow-connector-spacer"></div>
-                  
-                </div>
-                <!-- Row 2: Card 6 ← Card 5 ← Card 4 -->
-              </div>
+              <p>Implemented multiple selection modes that let animators choose individual fingers or entire finger groups depending on the task.</p>
+              <p>This makes it easy to switch between detailed posing and broader hand adjustments without interrupting the animation workflow.</p>
             </div>
 
             <div class="feature-media-group">
              <!--  <h5>Screenshots</h5>-->
               <div class="screenshot-grid feature-media-grid">
                 <div class="screenshot-item" onclick="openLightbox(this)">
-                  <img src="tech-anim-projects/ss-05.png" alt="Screenshot">
-                </div>
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <img src="tech-anim-projects/ss-04.png" alt="Screenshot">
-                </div>
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <img src="tech-anim-projects/ss-06.png" alt="Screenshot">
+                  <img src="tools-projects/tool-02.png" alt="Screenshot">
                 </div>
               </div>
             </div>
           </div>
-           <!-- <div class="feature-media-group">
-              <h5>Screenshots</h5>
-              <div class="screenshot-grid feature-media-grid">
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <img src="https://placehold.co/600x338/1a1a1a/ffffff?text=Screenshot+1" alt="Feature 03 Screenshot 1">
-                </div>
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <img src="https://placehold.co/600x338/1a1a1a/ffffff?text=Screenshot+2" alt="Feature 03 Screenshot 2">
-                </div>
-              </div>
-            </div>
-          </div>-->
 
 <!-- ─────────────────────────────────────────────────────────
                FEATURE CARD 3 — placeholder, replace title/description/media
                ───────────────────────────────────────────────────────── -->
           <div class="feature-block">
-            <h4><span style="color:#136ac1;">IK Foot Placement: </span>Terrain Adaptation</h4>
+            <h4><span style="color:#136ac1;">Animator-Friendly Interface: </span>Simple, Fast, and Easy to Use</h4>
 
             <div class="feature-description">
-              <p>Implemented an IK foot placement system that adjusts the character's feet to match uneven terrain at runtime.</p>
-              <p>By using line traces to detect the ground beneath each foot, the system reduces foot sliding and prevents the feet from clipping through surfaces.</p>
-              <p>This helps the character maintain more believable contact with the environment, especially when moving across slopes or irregular terrain.</p>
+              <p>Designed a lightweight user interface that keeps the most commonly used selection controls within easy reach.</p>
+              <p>The layout prioritizes speed and clarity, allowing animators to spend less time navigating the rig and more time focusing on performance.</p>
             </div>
 
            <!-- GIFs (optional) — replace src with your real gif(s) or mp4 clip(s), add/remove .screenshot-item entries, or delete this whole block if none.
                  MP4s are far more optimized than GIFs for the same "looping clip" effect — use a <video> tag like below instead of <img> for mp4s. -->
             <div class="feature-media-group">
               <!--<h5>GIFs</h5>-->
-              <div class="screenshot-grid feature-media-grid">
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <video autoplay loop muted playsinline>
-                    <source src="tech-anim-projects/ik-foot-terrain-adapt.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <img src="tech-anim-projects/ss-07.png" alt="Screenshot">
-                </div>         
-                
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <img src="tech-anim-projects/ss-08.png" alt="Screenshot">
-                </div>  
-
-              </div>
             </div>
           </div>
 
@@ -736,12 +624,11 @@
                FEATURE CARD 4 — placeholder, replace title/description/media
                ───────────────────────────────────────────────────────── -->
           <div class="feature-block">
-            <h4><span style="color:#136ac1;">Turn-In-Place</span></h4>
+            <h4><span style="color:#136ac1;">Workflow Optimization: </span>Built to Reduce Repetitive Tasks</h4>
 
             <div class="feature-description">
-              <p>Created a curve-driven Turn-In-Place system that allows the character's torso to rotate naturally while standing still.</p>
-              <p>The system detects changes in the character's root bone offset (or facing angle) and plays the appropriate turning animation before returning to the idle state.</p>
-              <p>This small detail adds a noticeable improvement to the overall feel and realism of the character's movement.</p>
+              <p>Created the tool to solve a common bottleneck in character animation where repeatedly selecting finger controls can become tedious.</p>
+              <p>By automating the selection process, the tool helps improve efficiency during blocking, polishing, and final animation passes.</p>
             </div>
 
            <!-- GIFs (optional) — replace src with your real gif(s) or mp4 clip(s), add/remove .screenshot-item entries, or delete this whole block if none.
@@ -749,30 +636,19 @@
             <div class="feature-media-group">
               <!--<h5>GIFs</h5>-->
               <div class="screenshot-grid feature-media-grid">
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <video autoplay loop muted playsinline>
-                    <source src="tech-anim-projects/turn-in-place.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="screenshot-item" onclick="openLightbox(this)">
-                  <img src="tech-anim-projects/ss-09.png" alt="Screenshot">
-                </div> 
               </div>
             </div>
           </div>
-
-        </div>
-        
-
       <!-- ══════ BACK BUTTON (BOTTOM) ══════ -->
         <div class="back-btn-top" data-aos="fade-up">
-          <a href="tech-anim-projects.html" class="btn btn-primary">
+          <a href="tools-projects.html" class="btn btn-primary">
             <i class="bi bi-arrow-left"></i> Back
           </a>
         </div>
 
       </div>
+      </div>
+        
     </section>
 
   </main>
